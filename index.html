@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ziad Hatem Ahmed | Contact Card</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px 16px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#09172b,#173c60);
+  color: white;
+}
+.card {
+  width: 100%; max-width: 410px;
+  padding: 32px 24px; border-radius: 26px;
+  background: #10233f;
+  box-shadow: 0 20px 60px #0006;
+  text-align: center;
+  border: 1px solid #294766;
+}
+.avatar {
+  width: 82px; height: 82px; margin: auto;
+  border-radius: 50%; display: grid; place-items: center;
+  background: #d7eaf8; color: #10233f;
+  font-size: 30px; font-weight: bold;
+}
+h1 { font-size: 25px; margin: 18px 0 8px; }
+.subtitle { color: #b9d8f5; font-size: 13px; line-height: 1.6; }
+.links { display: grid; gap: 12px; margin: 28px 0 18px; }
+.links a, .save {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 52px; padding: 14px;
+  border-radius: 12px; text-decoration: none;
+  font-weight: bold; font-size: 15px;
+  transition: .2s;
+}
+.links a { background: white; color: #10233f; }
+.links a:hover, .save:hover { transform: translateY(-2px); }
+.save {
+  width: 100%; border: 0; cursor: pointer;
+  background: #20b6d5; color: #08243b;
+}
+.qr {
+  margin-top: 26px; padding: 20px;
+  background: white; color: #10233f;
+  border-radius: 16px;
+}
+.qr img { width: 180px; height: 180px; max-width: 100%; }
+.qr p { font-size: 13px; font-weight: bold; }
+footer { color: #9bb8d2; font-size: 11px; margin-top: 22px; }
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="avatar">ZH</div>
+  <h1>Ziad Hatem Ahmed</h1>
+  <p class="subtitle">
+    Engineering Student<br>
+    Embedded Systems | Robotics
+  </p>
+
+  <div class="links">
+    <a href="https://github.com/ziadhate" target="_blank" rel="noopener">
+      GitHub — Explore My Projects
+    </a>
+    <a href="https://www.linkedin.com/in/ziad-hatem-416125307/"
+       target="_blank" rel="noopener">
+      LinkedIn — Professional Profile
+    </a>
+    <a href="mailto:ziadhaah12345624@gmail.com">
+      Email — Contact Me
+    </a>
+    <a href="https://wa.me/201096434023"
+       target="_blank" rel="noopener">
+      WhatsApp — Chat With Me
+    </a>
+  </div>
+
+  <button class="save" onclick="saveContact()">
+    + SAVE CONTACT
+  </button>
+
+  <section class="qr">
+    <div id="qr-content">
+      <p>YOUR PERSONAL QR CODE</p>
+      <span style="font-size:12px">Publish the page to generate your QR.</span>
+    </div>
+  </section>
+
+  <footer>SCAN · CONNECT · COLLABORATE</footer>
+</main>
+
+<script>
+function saveContact() {
+  const vcard = [
+    "BEGIN:VCARD",
+    "VERSION:3.0",
+    "N:Ahmed;Ziad Hatem;;;",
+    "FN:Ziad Hatem Ahmed",
+    "EMAIL;TYPE=INTERNET:ziadhaah12345624@gmail.com",
+    "TEL;TYPE=CELL,VOICE:+201096434023",
+    "URL:https://github.com/ziadhate",
+    "URL:https://www.linkedin.com/in/ziad-hatem-416125307/",
+    "END:VCARD"
+  ].join("\r\n");
+
+  const blob = new Blob([vcard], {
+    type: "text/vcard;charset=utf-8"
+  });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "Ziad_Hatem_Contact.vcf";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+if (location.protocol === "https:" ||
+    location.protocol === "http:") {
+  const qr = document.createElement("img");
+  qr.alt = "Scan to open Ziad's contact card";
+  qr.src = "https://api.qrserver.com/v1/create-qr-code/?size=240x240&data="
+    + encodeURIComponent(location.href);
+
+  const container = document.getElementById("qr-content");
+  container.innerHTML = "<p>SCAN TO OPEN MY CONTACT CARD</p>";
+  container.appendChild(qr);
+}
+</script>
+</body>
+</html>
