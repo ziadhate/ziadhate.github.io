@@ -4,81 +4,328 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ziad Hatem Ahmed | Contact Card</title>
+<meta name="theme-color" content="#09172b">
+
+<title>Ziad Hatem Ahmed | Robotics & Embedded Systems</title>
+
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
 body {
-  margin: 0; min-height: 100vh;
-  display: flex; align-items: center; justify-content: center;
-  padding: 24px 16px;
+  margin: 0;
+  min-height: 100vh;
+  padding: 30px 16px;
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg,#09172b,#173c60);
   color: white;
 }
+
+.container {
+  width: 100%;
+  max-width: 760px;
+  margin: auto;
+}
+
 .card {
-  width: 100%; max-width: 410px;
-  padding: 32px 24px; border-radius: 26px;
+  padding: 32px 24px;
+  border-radius: 26px;
   background: #10233f;
   box-shadow: 0 20px 60px #0006;
-  text-align: center;
   border: 1px solid #294766;
+  text-align: center;
 }
+
 .avatar {
-  width: 82px; height: 82px; margin: auto;
-  border-radius: 50%; display: grid; place-items: center;
-  background: #d7eaf8; color: #10233f;
-  font-size: 30px; font-weight: bold;
+  width: 82px;
+  height: 82px;
+  margin: auto;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #d7eaf8;
+  color: #10233f;
+  font-size: 30px;
+  font-weight: bold;
 }
-h1 { font-size: 25px; margin: 18px 0 8px; }
-.subtitle { color: #b9d8f5; font-size: 13px; line-height: 1.6; }
-.links { display: grid; gap: 12px; margin: 28px 0 18px; }
+
+h1 {
+  font-size: 27px;
+  margin: 18px 0 8px;
+}
+
+.subtitle {
+  color: #b9d8f5;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.links {
+  display: grid;
+  gap: 12px;
+  margin: 28px 0 18px;
+}
+
 .links a, .save {
-  display: flex; align-items: center; justify-content: center;
-  min-height: 52px; padding: 14px;
-  border-radius: 12px; text-decoration: none;
-  font-weight: bold; font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
   transition: .2s;
 }
-.links a { background: white; color: #10233f; }
-.links a:hover, .save:hover { transform: translateY(-2px); }
-.save {
-  width: 100%; border: 0; cursor: pointer;
-  background: #20b6d5; color: #08243b;
+
+.links a {
+  background: white;
+  color: #10233f;
 }
+
+.links a:hover, .save:hover {
+  transform: translateY(-2px);
+}
+
+.save {
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  background: #20b6d5;
+  color: #08243b;
+}
+
+.section {
+  margin-top: 24px;
+  padding: 28px 24px;
+  background: #10233f;
+  border: 1px solid #294766;
+  border-radius: 22px;
+}
+
+.section h2 {
+  font-size: 23px;
+  margin: 0 0 16px;
+}
+
+.section h3 {
+  font-size: 16px;
+  color: #65d6ed;
+  margin: 22px 0 10px;
+}
+
+.section p {
+  color: #c4d7e9;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.project-label {
+  display: inline-block;
+  padding: 8px 13px;
+  border-radius: 20px;
+  background: #183e5c;
+  color: #65d6ed;
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+.project-title {
+  font-size: 25px;
+  line-height: 1.4;
+  color: white;
+}
+
+.tagline {
+  color: #65d6ed !important;
+  font-weight: bold;
+}
+
+.project-image {
+  width: 100%;
+  border-radius: 15px;
+  margin: 15px 0;
+  border: 1px solid #34516d;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.feature {
+  padding: 16px 12px;
+  background: #172f4d;
+  border: 1px solid #294766;
+  border-radius: 14px;
+  text-align: left;
+}
+
+.feature strong {
+  display: block;
+  color: #65d6ed;
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+
+.feature span {
+  color: #c4d7e9;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.workflow {
+  border-left: 2px solid #20b6d5;
+  margin: 20px 0 0 8px;
+  padding-left: 20px;
+}
+
+.step {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.step::before {
+  content: "";
+  position: absolute;
+  left: -26px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #20b6d5;
+}
+
+.step strong {
+  color: white;
+  font-size: 14px;
+}
+
+.step p {
+  margin: 5px 0;
+  font-size: 13px;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 14px;
+}
+
+.tech {
+  padding: 9px 12px;
+  border-radius: 8px;
+  background: #1b3c5b;
+  border: 1px solid #315775;
+  color: #c8eaff;
+  font-size: 12px;
+}
+
+.team-box {
+  padding: 18px;
+  background: #183451;
+  border-radius: 14px;
+  margin-top: 18px;
+}
+
+.project-cta {
+  display: block;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 12px;
+  background: #20b6d5;
+  color: #08243b;
+  font-weight: bold;
+  margin-top: 22px;
+}
+
 .qr {
-  margin-top: 26px; padding: 20px;
-  background: white; color: #10233f;
+  margin-top: 26px;
+  padding: 20px;
+  background: white;
+  color: #10233f;
   border-radius: 16px;
 }
-.qr img { width: 180px; height: 180px; max-width: 100%; }
-.qr p { font-size: 13px; font-weight: bold; }
-footer { color: #9bb8d2; font-size: 11px; margin-top: 22px; }
+
+.qr img {
+  width: 180px;
+  height: 180px;
+  max-width: 100%;
+}
+
+.qr p {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+footer {
+  color: #9bb8d2;
+  font-size: 11px;
+  margin-top: 22px;
+  text-align: center;
+}
+
+@media(max-width:480px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 23px 18px;
+  }
+
+  h1 {
+    font-size: 23px;
+  }
+}
 </style>
 </head>
+
 <body>
+
+<div class="container">
+
+<!-- PERSONAL CONTACT CARD -->
 <main class="card">
+
   <div class="avatar">ZH</div>
+
   <h1>Ziad Hatem Ahmed</h1>
+
   <p class="subtitle">
     Engineering Student<br>
-    Embedded Systems | Robotics
+    Embedded Systems | Robotics | Software Development
   </p>
 
   <div class="links">
-    <a href="https://github.com/ziadhate" target="_blank" rel="noopener">
+
+    <a href="https://github.com/ziadhate"
+       target="_blank" rel="noopener">
       GitHub — Explore My Projects
     </a>
+
     <a href="https://www.linkedin.com/in/ziad-hatem-416125307/"
        target="_blank" rel="noopener">
       LinkedIn — Professional Profile
     </a>
+
     <a href="mailto:ziadhaah12345624@gmail.com">
       Email — Contact Me
     </a>
+
     <a href="https://wa.me/201096434023"
        target="_blank" rel="noopener">
       WhatsApp — Chat With Me
     </a>
+
   </div>
 
   <button class="save" onclick="saveContact()">
@@ -88,15 +335,229 @@ footer { color: #9bb8d2; font-size: 11px; margin-top: 22px; }
   <section class="qr">
     <div id="qr-content">
       <p>YOUR PERSONAL QR CODE</p>
-      <span style="font-size:12px">Publish the page to generate your QR.</span>
+      <span style="font-size:12px">
+        Publish the page to generate your QR.
+      </span>
     </div>
   </section>
 
   <footer>SCAN · CONNECT · COLLABORATE</footer>
+
 </main>
+
+
+<!-- GRADUATION PROJECT -->
+<section class="section" id="project">
+
+  <span class="project-label">
+    ENGINEERING GRADUATION PROJECT · 2026/2027
+  </span>
+
+  <h2 class="project-title">
+    Autonomous AI-Powered Hospital Delivery & Infection-Control Robot
+  </h2>
+
+  <p class="tagline">
+    Smarter Hospital Logistics. Safer Healthcare Environments.
+  </p>
+
+  <p>
+    Hospitals rely on continuous transportation of medications,
+    medical supplies, laboratory samples, meals and essential
+    equipment between departments and patient rooms.
+    These repetitive logistics tasks consume valuable staff time
+    and can increase unnecessary human contact.
+  </p>
+
+  <p>
+    Our project aims to develop an autonomous mobile robot
+    designed to support hospital logistics through intelligent
+    navigation, secure delivery compartments and
+    infection-control-oriented workflows.
+  </p>
+
+  <h3>THE PROPOSED SOLUTION</h3>
+
+  <p>
+    The robot is designed to navigate indoor hospital-like
+    environments, transport requested items and deliver them
+    to designated destinations with minimal human intervention.
+    Authorized personnel can interact with its delivery
+    compartments through a secure access mechanism.
+  </p>
+
+  <div class="features">
+
+    <div class="feature">
+      <strong>Autonomous Navigation</strong>
+      <span>
+        Indoor mapping, localization and path planning
+        using LiDAR and ROS 2.
+      </span>
+    </div>
+
+    <div class="feature">
+      <strong>Secure Delivery</strong>
+      <span>
+        Dedicated compartments with RFID, QR or
+        barcode-based access concepts.
+      </span>
+    </div>
+
+    <div class="feature">
+      <strong>Smart Perception</strong>
+      <span>
+        Camera-based environmental perception and
+        obstacle awareness.
+      </span>
+    </div>
+
+    <div class="feature">
+      <strong>Infection-Control Workflow</strong>
+      <span>
+        Separated delivery compartments and
+        cleaning-oriented operational procedures.
+      </span>
+    </div>
+
+    <div class="feature">
+      <strong>Human-Robot Interaction</strong>
+      <span>
+        Display-based communication, voice interaction
+        concepts and status feedback.
+      </span>
+    </div>
+
+    <div class="feature">
+      <strong>Embedded Control</strong>
+      <span>
+        Real-time motor control, sensor integration
+        and safety monitoring.
+      </span>
+    </div>
+
+  </div>
+
+
+  <h3>HOW IT WORKS</h3>
+
+  <div class="workflow">
+
+    <div class="step">
+      <strong>01 — Delivery Request</strong>
+      <p>
+        An authorized user requests transportation
+        of an item to a designated destination.
+      </p>
+    </div>
+
+    <div class="step">
+      <strong>02 — Secure Loading</strong>
+      <p>
+        The item is placed inside the assigned
+        delivery compartment.
+      </p>
+    </div>
+
+    <div class="step">
+      <strong>03 — Autonomous Navigation</strong>
+      <p>
+        The robot uses its mapping and navigation
+        system to move through the environment.
+      </p>
+    </div>
+
+    <div class="step">
+      <strong>04 — Destination Arrival</strong>
+      <p>
+        The robot reaches the assigned location
+        and notifies the authorized recipient.
+      </p>
+    </div>
+
+    <div class="step">
+      <strong>05 — Secure Delivery</strong>
+      <p>
+        The recipient accesses the assigned
+        compartment using an authorized method.
+      </p>
+    </div>
+
+  </div>
+
+
+  <h3>TECHNOLOGY STACK</h3>
+
+  <div class="tech-list">
+    <span class="tech">ROS 2</span>
+    <span class="tech">Nav2</span>
+    <span class="tech">SLAM</span>
+    <span class="tech">LiDAR</span>
+    <span class="tech">Computer Vision</span>
+    <span class="tech">Raspberry Pi</span>
+    <span class="tech">STM32</span>
+    <span class="tech">Embedded C</span>
+    <span class="tech">RTOS</span>
+    <span class="tech">CAN Bus</span>
+    <span class="tech">Python</span>
+    <span class="tech">Linux</span>
+  </div>
+
+
+  <h3>PROJECT OBJECTIVES</h3>
+
+  <p>
+    • Reduce repetitive transportation workloads.<br>
+    • Improve delivery organization and traceability.<br>
+    • Support controlled item handling workflows.<br>
+    • Reduce unnecessary movement and contact.<br>
+    • Demonstrate practical integration of robotics,
+      embedded systems and artificial intelligence.
+  </p>
+
+
+  <div class="team-box">
+
+    <h3 style="margin-top:0">MY ROLE</h3>
+
+    <p>
+      Team Leader — Graduation Project
+    </p>
+
+    <p>
+      Leading the engineering team, coordinating system
+      architecture and contributing to embedded systems,
+      firmware development and robotics integration.
+    </p>
+
+  </div>
+
+  <a class="project-cta"
+     href="mailto:ziadhaah12345624@gmail.com?subject=Hospital%20Robot%20Project%20Inquiry">
+    DISCUSS THE PROJECT & COLLABORATION
+  </a>
+
+  <p style="font-size:11px;margin-top:18px">
+    This is an engineering prototype under development.
+    It is designed to support healthcare staff, not replace
+    medical professionals or perform medical diagnosis.
+  </p>
+
+</section>
+
+
+<footer>
+  DESIGNED TO CONNECT ENGINEERING WITH REAL-WORLD IMPACT
+  <br><br>
+  © 2026 Ziad Hatem Ahmed
+</footer>
+
+</div>
+
 
 <script>
 function saveContact() {
+
   const vcard = [
     "BEGIN:VCARD",
     "VERSION:3.0",
@@ -112,25 +573,41 @@ function saveContact() {
   const blob = new Blob([vcard], {
     type: "text/vcard;charset=utf-8"
   });
+
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
+
   a.href = url;
   a.download = "Ziad_Hatem_Contact.vcf";
+
+  document.body.appendChild(a);
   a.click();
+  a.remove();
+
   URL.revokeObjectURL(url);
 }
 
+
+// Generate QR code using the published page URL
 if (location.protocol === "https:" ||
     location.protocol === "http:") {
+
   const qr = document.createElement("img");
+
   qr.alt = "Scan to open Ziad's contact card";
-  qr.src = "https://api.qrserver.com/v1/create-qr-code/?size=240x240&data="
+
+  qr.src =
+    "https://api.qrserver.com/v1/create-qr-code/?size=240x240&data="
     + encodeURIComponent(location.href);
 
   const container = document.getElementById("qr-content");
-  container.innerHTML = "<p>SCAN TO OPEN MY CONTACT CARD</p>";
+
+  container.innerHTML =
+    "<p>SCAN TO OPEN MY CONTACT CARD & PROJECT</p>";
+
   container.appendChild(qr);
 }
 </script>
+
 </body>
 </html>
