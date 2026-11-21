@@ -1,21 +1,19 @@
 
-// Google Form Feedback URL
 const FEEDBACK_FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSfEFvEpHiXYvKUL2EokYCBVVvXf01VM7S8T7nS9Mk6NZpgJfA/viewform";
 
-// Generate QR Code
-if (location.protocol === "https:" ||
-    location.protocol === "http:") {
+const container = document.getElementById("qr-content");
 
+if (container) {
   const qr = document.createElement("img");
 
   qr.alt = "Scan to evaluate our Hospital Delivery Robot project";
+  qr.width = 240;
+  qr.height = 240;
 
   qr.src =
     "https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=" +
     encodeURIComponent(FEEDBACK_FORM_URL);
-
-  const container = document.getElementById("qr-content");
 
   container.innerHTML =
     "<p>SCAN TO EVALUATE OUR PROJECT</p>";
